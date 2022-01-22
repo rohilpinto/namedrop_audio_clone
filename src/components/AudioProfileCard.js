@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { Row, Col, Divider, Tooltip, Button, Typography, Grid } from "antd";
 
 import ReactCardFlip from "react-card-flip";
@@ -48,7 +49,6 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
     justifyContent: "center",
     alignItems: "center",
     gap: "5px",
-    
   };
 
   return (
