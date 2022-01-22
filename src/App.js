@@ -1,23 +1,19 @@
-import { Box, Card, Paper } from "@mui/material";
 import logo from "./assets/namedroplogowhite.png";
 import bgImage from "./assets/bg.jpg";
 
 function App() {
   return (
-    <Box className="App">
-      <Box sx={{ height: "100vh", backgroundImage: `url(${bgImage})`, backgroundSize: "cover", display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Box sx={{ p: 5, position: "absolute", top: "5px", left: "10px" }}>
+    <div className="App">
+      <div style={{ height: "100vh", backgroundImage: `url(${bgImage})`, backgroundSize: "cover", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ padding: 5, position: "absolute", top: "5px", left: "10px" }}>
           {/* logo */}
 
-          <Box component="img" src={logo} alt="sd" />
-        </Box>
+          <img src={logo} alt="sd" />
+        </div>
         {/* card */}
-        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-
-          
-        </Box>
-      </Box>
-    </Box>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}></div>
+      </div>
+    </div>
   );
 }
 

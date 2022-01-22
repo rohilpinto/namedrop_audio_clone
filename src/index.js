@@ -1,19 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { CssBaseline } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from "./App";
 
 import ShowDrop from "./ShowDrop";
 
-// import { createTheme, ThemeProvider } from "@mui/material";
+import "./style.css";
 
 ReactDOM.render(
   <>
-    <CssBaseline />
-
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />

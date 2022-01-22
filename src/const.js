@@ -2,6 +2,7 @@ import keshavImg from "./assets/keshavm-pic.jpg";
 import rohilImg from "./assets/rohil.jpg";
 import keshavaudio from "./assets/audio/keshavmalaniaudio.mp3";
 import sommar from "./assets/audio/S1 - Sommar.mp3";
+
 export const audioProfileCardList = [
   {
     id: 1,
