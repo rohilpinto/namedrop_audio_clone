@@ -14,6 +14,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+
         <Route path=":id" element={<ShowDrop />} />
       </Routes>
     </BrowserRouter>

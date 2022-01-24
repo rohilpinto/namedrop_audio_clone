@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Row, Col, Divider, Tooltip, Button, Typography, Grid } from "antd";
+import { Divider, Tooltip, Button, Typography, Grid } from "antd";
 
 import ReactCardFlip from "react-card-flip";
 import audioGif from "../assets/audio_play.gif";
@@ -36,6 +36,8 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
 
   // const { xs, md, lg } = useBreakpoint();
 
+  // styles
+
   const containerStyles = {
     background: "white",
     borderRadius: "5px",
@@ -61,7 +63,7 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
         </div>
 
         <div style={nameContainerStyles}>
-          <img width={100} src={profilePic} alt="img" style={{ borderRadius: "100px" }} />
+          <img width={100} src={profilePic} alt="img" style={{ borderRadius: "100px", width: "150px", height: "150px", objectFit: "cover" }} />
           <Title level={3} style={{ fontWeight: "400", margin: "5px 0" }}>
             {name}
           </Title>
