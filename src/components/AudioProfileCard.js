@@ -8,7 +8,7 @@ import audioGif from "../assets/audio_play.gif";
 import { DoubleLeftOutlined, DoubleRightOutlined, PauseCircleFilled, PlayCircleFilled } from "@ant-design/icons/lib/icons";
 
 const { Title, Paragraph } = Typography;
-// const { useBreakpoint } = Grid;
+const { useBreakpoint } = Grid;
 
 const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", profileAudio, phoneticName = "yourname", pronoun = "yourname" }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -23,7 +23,6 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
 
   useEffect(() => {
     audio.src = profileAudio;
-    console.log("audio src inside useeffect", audio.src);
   });
 
   const handleSlowPLay = () => {
@@ -64,7 +63,7 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
     };
   });
 
-  // const { xs, md, lg } = useBreakpoint();
+  const { xs, md, lg } = useBreakpoint();
 
   // styles
 
@@ -72,7 +71,8 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
     background: "white",
     borderRadius: "5px",
     padding: "20px",
-    width: "290px",
+
+    minWidth: `${xs ? "250px" : "290px"}`,
     height: "440px",
   };
 
