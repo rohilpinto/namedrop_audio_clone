@@ -32,10 +32,11 @@ const ShowDrop = () => {
     } catch (error) {
       if (error === "AbortSignal") {
         console.log("Fetch Aborted");
-      } else {
-        setLoading(true);
+      } else if (error === "Cannot read properties of null (reading '2') ") {
         setError(true);
         console.log(error);
+      } else {
+        setLoading(true);
       }
     }
   };
@@ -59,8 +60,7 @@ const ShowDrop = () => {
       {/* card */}
 
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        {error && <AudioProfileCard />}
-        {loading ? <Loading /> : <AudioProfileCard name={userData.fullName} profileAudio={userData.profileAudio} phoneticName={userData.phoneticName} pronoun={userData.pronoun} pathid={userData.pathid} profilePic={userData.profilePic} />}
+        {loading ? <AudioProfileCard /> : <AudioProfileCard name={userData.fullName} profileAudio={userData.profileAudio} phoneticName={userData.phoneticName} pronoun={userData.pronoun} pathid={userData.pathid} profilePic={userData.profilePic} />}
       </div>
     </div>
   );
