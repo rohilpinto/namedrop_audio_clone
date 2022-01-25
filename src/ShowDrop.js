@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import AudioProfileCard from "./components/AudioProfileCard";
 
 import { useParams } from "react-router-dom";
-import { audioProfileCardList } from "./const";
 
 import logo from "./assets/namedroplogowhite.png";
 
 import bgImage from "./assets/bg.jpg";
 
 const ShowDrop = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(false);
+  // const [fetchedData, setFetchedData] = useState([]);
   const [userData, setUserData] = useState({});
-  // const [errorText, setErrorText] = useState("");
+  const [error, setError] = useState(false);
 
   const { id } = useParams();
 
@@ -25,16 +23,21 @@ const ShowDrop = () => {
   const fetchData = async () => {
     try {
       const req = await fetch(URL, { signal: abortContrl.signal });
-      const res = await req?.json();
-      const data = JSON.parse(res?.data);
+      const res = await req.json();
+      const data = JSON.parse(res.data);
 
-      setData(data);
-      setUserData({ id: data[2], fullName: data[2] + " " + data[3], profilePic: data[14], phoneticName: data[7] + " " + data[8], pronoun: data[6], audio: data[10], pathid: data[0] });
+      setUserData({ id: data[2], fullName: data[2] + " " + data[3], profilePic: data[14], phoneticName: data[7] + " " + data[8], pronoun: data[6], profileAudio: data[10], pathid: data[0] });
     } catch (error) {
-      console.log(error);
-      setError(true);
+      // if (error === "AbortSignal") {
+      //   console.log("Fetch Aborted");
+      // } else {
+      //   setError(true);
+      //   console.log(error);
+      // }
     }
   };
+
+  console.log(userData);
 
   useEffect(() => {
     fetchData();
@@ -54,7 +57,7 @@ const ShowDrop = () => {
       {/* card */}
 
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        {error ? <AudioProfileCard /> : <AudioProfileCard name={userData.fullName} audio={userData.audio} phoneticName={userData.phoneticName} pronoun={userData.pronoun} pathid={userData.pathid} profilePic={userData.profilePic} />}
+        {error ? <AudioProfileCard /> : <AudioProfileCard name={userData.fullName} profileAudio={userData.profileAudio} phoneticName={userData.phoneticName} pronoun={userData.pronoun} pathid={userData.pathid} profilePic={userData.profilePic} />}
       </div>
     </div>
   );
