@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Divider, Tooltip, Button, Typography, Grid } from "antd";
 
@@ -63,7 +63,7 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
     };
   });
 
-  const { xs, md, lg } = useBreakpoint();
+  const { xs } = useBreakpoint();
 
   // styles
 
