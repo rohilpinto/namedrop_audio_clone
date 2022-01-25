@@ -42,11 +42,11 @@ const ShowDrop = () => {
     return () => {
       abortContrl.abort();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div style={{ height: "100vh", backgroundImage: `url(${!userData.bgimage === "" ? userData.bgimage : fallbackImage})`, backgroundSize: "cover", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <div style={{ height: "100vh", backgroundImage: `url(${!userData.bgimage == "" || undefined ? userData.bgimage : fallbackImage})`, backgroundSize: "cover", display: "flex", justifyContent: "center", alignItems: "center" }}>
       <div style={{ padding: 5, position: "absolute", top: "5px", left: "10px" }}>
         {/* logo */}
 

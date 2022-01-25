@@ -22,6 +22,11 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
   };
 
   useEffect(() => {
+    setPlaying(false);
+    setPlayingSlow(false);
+  }, [isFlipped]);
+
+  useEffect(() => {
     audio.src = profileAudio;
   });
 
@@ -41,6 +46,7 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
 
   useEffect(() => {
     setPlaying(false);
+
     audio.currentTime = 0;
     audio.playbackRate = 0.5;
     playingSlow ? audio.play() : audio.pause();
@@ -58,6 +64,7 @@ const AudioProfileCard = ({ name = "yourname", profilePic = "https://cdn.pixabay
 
     return () => {
       audio.removeEventListener("ended", () => {
+        setPlaying(false);
         setPlayingSlow(false);
       });
     };
